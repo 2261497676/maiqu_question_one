@@ -1,0 +1,53 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name:user-center
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://rm-bp18x2ks086oj7n2xho.mysql.rds.aliyuncs.com:3306/maiqu_question_one?serverTimeZone=Asia/Shanghai
+    username: wht
+    password: QE1haXF1MjAyMg==
+    jackson:
+      date-format: yyyy-MM-dd
+      time-zone: GMT+8
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  redis:
+    host: 116.62.202.2
+    port: 6379
+    database: 1
+    lettuce:
+      pool:
+        min-idle: 0
+        max-idle: 8
+        max-active: 8
+        max-wait: -1ms
+#    password: 12456
+server:
+  port: 8080
+  servlet:
+    context-path: '/maiqu'
+    session:
+      cookie:
+        domain:
+
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: isDelete
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+
+
+
+
+
